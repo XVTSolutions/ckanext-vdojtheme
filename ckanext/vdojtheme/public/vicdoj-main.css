@@ -45,7 +45,7 @@
 }
 /* The "box shadow" effect that appears around the search box when it
    has the keyboard cursor's focus. */
-.masthead input[type="text"]:focu//vicdoj dark blues {
+.masthead input[type="text"]:focus {
   -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
   box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
 }
@@ -120,7 +120,7 @@ background: url("vicdoj-wallpaper.jpg");
 
 .site-footer,
 body {
-  background-color: #002D47;.
+  background-color: #002D47;
 }
 /* The text in the footer. */
 .site-footer,
