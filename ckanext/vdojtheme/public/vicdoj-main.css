@@ -50,6 +50,12 @@
   box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
 }
 
+.masthead .logo img {
+    height: 50px;
+    margin-top: 2px;
+}
+
+
 #vicdoj-title {
   margin-left: 12px;
   padding-left: 12px;
