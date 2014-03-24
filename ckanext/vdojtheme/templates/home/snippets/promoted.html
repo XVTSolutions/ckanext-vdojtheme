@@ -1,11 +1,27 @@
-{% ckan_extends %}
+{% set intro = g.site_intro_text %}
 
-{% block home_image %}
+<div class="module-content box">
+  <header>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h1 class="page-heading">{{ _("Welcome to CKAN") }}</h1>
+      <p>
+        {% trans %}This is a nice introductory paragraph about CKAN or the site
+        in general. We don't have any copy to go here yet but soon we will
+        {% endtrans %}
+      </p>
+    {% endif %}
+  </header>
+
+  {% block home_image %}
     <section class="featured media-overlay">
+
       {% block home_image_content %}
         <a class="media-image" href="#">
-          <img src="regional-map.gif" alt="Placeholder" width="420" height="220" />
+          <img src="./victoria-regional-map.gif" alt="Placeholder" width="420" height="220" />
         </a>
       {% endblock %}
     </section>
-{% endblock %}
+  {% endblock %}
+</div>
