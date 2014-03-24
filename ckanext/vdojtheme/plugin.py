@@ -13,5 +13,7 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
     def update_config(self, config):
         plugins.toolkit.add_template_directory(config, 'templates')
         plugins.toolkit.add_public_directory(config, 'public')
+        print config
+
 
 
