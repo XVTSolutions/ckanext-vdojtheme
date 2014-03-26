@@ -16,6 +16,8 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
 
         #configure vicdoj logo
         config['ckan.site_logo'] = 'vdoj-logo-white-transparent.png'
+        config['ckan.locale_default'] = 'en_AU'
+        
 
 
 

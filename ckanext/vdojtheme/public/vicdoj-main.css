@@ -136,3 +136,10 @@ body {
 .site-footer a {
   color: rgba(255, 255, 255, 0.6);
 }
+
+
+/* hide the search bar on the search page */
+#no-search{
+    width: 216px;
+    float: left;
+}

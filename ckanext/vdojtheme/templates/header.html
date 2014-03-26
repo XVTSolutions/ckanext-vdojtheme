@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% block header_site_search %}
+        {% set url = h.full_current_url() %}
+
+        {% if url != "http://localhost:5000/dataset" %}
+            {{ super() }}
+        {% else %}
+        <div id="no-search"></div>
+        {% endif %}
+{% endblock %}
