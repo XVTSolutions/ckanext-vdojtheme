@@ -3,7 +3,7 @@
 {% block header_site_search %}
         {% set url = h.full_current_url() %}
 
-        {% if url != "http://localhost:5000/dataset" %}
+        {% if url != "http://vicdoj.xvt.com.au/dataset" %}
             {{ super() }}
         {% else %}
         <div id="no-search"></div>
