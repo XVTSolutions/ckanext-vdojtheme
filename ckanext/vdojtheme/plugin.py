@@ -1,5 +1,16 @@
 import ckan.plugins as plugins
+from pylons import app_globals
+import ckan.lib.helpers as helpers
 
+
+def is_dataset_page():
+        current_url = helpers.full_current_url()
+        dataset_page = app_globals.site_url + '/dataset'
+
+        if current_url == dataset_page:
+            return True
+        else:
+            return False
 
 
 class VDOJThemePluginClass(plugins.SingletonPlugin):
@@ -7,8 +18,8 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
     Setup plugin
     """
 
-
     plugins.implements(plugins.IConfigurer, inherit=True)
+    plugins.implements(plugins.ITemplateHelpers)
 
     def update_config(self, config):
         plugins.toolkit.add_template_directory(config, 'templates')
@@ -17,7 +28,10 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
         #configure vicdoj logo
         config['ckan.site_logo'] = 'vdoj-logo-white-transparent.png'
         config['ckan.locale_default'] = 'en_AU'
-        
+
+
+    def get_helpers(self):
+        return {'is_dataset_page': is_dataset_page }
 
 
 

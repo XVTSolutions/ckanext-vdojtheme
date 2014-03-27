@@ -1,11 +1,9 @@
 {% ckan_extends %}
 
 {% block header_site_search %}
-        {% set url = h.full_current_url() %}
-
-        {% if url != "http://vicdoj.xvt.com.au/dataset" %}
-            {{ super() }}
-        {% else %}
+     {% if h.is_dataset_page() %}
         <div id="no-search"></div>
-        {% endif %}
+     {% else %}
+        {{ super() }}
+     {% endif %}
 {% endblock %}
