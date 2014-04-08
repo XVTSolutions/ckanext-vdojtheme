@@ -153,3 +153,26 @@ body {
     width: 216px;
     float: left;
 }
+
+
+/* ====================================
+   The organisation hierarchy list/tree
+   ==================================== */
+
+#publisher-tree{
+    padding: 0 0 0 30px;
+}
+
+#publisher-tree ul{
+    padding: 0 6px 6px 0;
+}
+
+#publisher-tree li{
+    list-style-type: none;
+    padding: 4px 0 0 0;
+}
+
+#publisher-tree a{
+    color: #00A0C4;
+    font-weight: bold;
+}
