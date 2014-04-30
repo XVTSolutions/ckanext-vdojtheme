@@ -1,7 +1,7 @@
 import ckan.plugins as plugins
 from pylons import app_globals
 import ckan.lib.helpers as helpers
-from helpers import init_translation
+from helpers import init_translation, translate_dropdown_text
 
 def is_dataset_page():
         current_url = helpers.full_current_url()
@@ -32,7 +32,10 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
 
 
     def get_helpers(self):
-        return {'is_dataset_page': is_dataset_page }
+        return {
+            'is_dataset_page': is_dataset_page,
+            'translate_dropdown_text':translate_dropdown_text,
+        }
 
     def configure(self, config):
         #init translation dictionary
