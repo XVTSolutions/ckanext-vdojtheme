@@ -1,7 +1,7 @@
 import ckan.plugins as plugins
 from pylons import app_globals
 import ckan.lib.helpers as helpers
-
+from helpers import init_translation
 
 def is_dataset_page():
         current_url = helpers.full_current_url()
@@ -20,6 +20,7 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
 
     plugins.implements(plugins.IConfigurer, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IConfigurable, inherit=True)
 
     def update_config(self, config):
         plugins.toolkit.add_template_directory(config, 'templates')
@@ -33,5 +34,8 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
     def get_helpers(self):
         return {'is_dataset_page': is_dataset_page }
 
+    def configure(self, config):
+        #init translation dictionary
+        init_translation()
 
 
