@@ -27,7 +27,7 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
         plugins.toolkit.add_public_directory(config, 'public')
 
         #configure vicdoj logo
-        config['ckan.site_logo'] = 'vdoj-logo-white-transparent.png'
+        config['ckan.site_logo'] = 'vdojr-logo.png'
 
 
 
