@@ -19,8 +19,12 @@ class VDOJThemePluginClass(plugins.SingletonPlugin):
     """
 
     plugins.implements(plugins.IConfigurer, inherit=True)
-    plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.ITemplateHelpers, inherit=True)
     plugins.implements(plugins.IConfigurable, inherit=True)
+
+    def __init__(self, **kwargs):
+        import anti_csrf
+        anti_csrf.intercept_csrf()
 
     def update_config(self, config):
         plugins.toolkit.add_template_directory(config, 'templates')
